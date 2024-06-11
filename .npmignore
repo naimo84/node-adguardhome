@@ -1,0 +1,14 @@
+.github
+.vscode
+test/*
+*.js.map
+src/*
+gulpfile.js
+buildSrc
+docs
+coverage
+.nyc*
+CHANGELOG.md
+CONTRIBUTING.md
+commitlint.config.js
+.release-it.js
