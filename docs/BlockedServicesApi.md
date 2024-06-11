@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**BlockedServicesAll**
+[**BlockedServicesAll**](BlockedServicesAll.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**BlockedServicesSchedule**
+[**BlockedServicesSchedule**](BlockedServicesSchedule.md)
 
 ### Authorization
 

@@ -10,6 +10,8 @@
   "keywords": [
     "fetch",
     "typescript",
+    "adguardhome",
+    "adguard",    
     "openapi-client",
     "openapi-generator"
   ],
