@@ -1,6 +1,5 @@
-# .DhcpApi
+# DhcpApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,13 +22,21 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi, DhcpApiCheckActiveDhcpRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
-let body:.DhcpApiCheckActiveDhcpRequest = {
+let body: DhcpApiCheckActiveDhcpRequest = {
   // DhcpFindActiveReq (optional)
   dhcpFindActiveReq: {
     _interface: "eth0",
@@ -69,7 +76,7 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpAddStaticLease**
 > void dhcpAddStaticLease(dhcpStaticLease)
@@ -79,13 +86,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi,DhcpApiDhcpAddStaticLeaseRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
-let body:.DhcpApiDhcpAddStaticLeaseRequest = {
+let body: DhcpApiDhcpAddStaticLeaseRequest = {
   // DhcpStaticLease
   dhcpStaticLease: {
     mac: "00:11:09:b3:b3:b8",
@@ -127,7 +142,7 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpInterfaces**
 > { [key: string]: NetInterface; } dhcpInterfaces()
@@ -137,11 +152,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
 let body:any = {};
 
@@ -175,7 +198,7 @@ This endpoint does not need any parameter.
 **200** | OK. |  -  |
 **500** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpRemoveStaticLease**
 > void dhcpRemoveStaticLease(dhcpStaticLease)
@@ -185,13 +208,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi, DhcpApiDhcpRemoveStaticLeaseRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
-let body:.DhcpApiDhcpRemoveStaticLeaseRequest = {
+let body: DhcpApiDhcpRemoveStaticLeaseRequest = {
   // DhcpStaticLease
   dhcpStaticLease: {
     mac: "00:11:09:b3:b3:b8",
@@ -233,7 +264,7 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpReset**
 > void dhcpReset()
@@ -243,11 +274,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
 let body:any = {};
 
@@ -281,7 +320,7 @@ This endpoint does not need any parameter.
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpResetLeases**
 > void dhcpResetLeases()
@@ -291,11 +330,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
 let body:any = {};
 
@@ -329,7 +376,7 @@ This endpoint does not need any parameter.
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpSetConfig**
 > void dhcpSetConfig()
@@ -339,13 +386,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi , DhcpApiDhcpSetConfigRequest} from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
-let body:.DhcpApiDhcpSetConfigRequest = {
+let body: DhcpApiDhcpSetConfigRequest = {
   // DhcpConfig (optional)
   dhcpConfig: {
     enabled: true,
@@ -397,7 +452,7 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpStatus**
 > DhcpStatus dhcpStatus()
@@ -407,11 +462,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
 let body:any = {};
 
@@ -445,7 +508,7 @@ This endpoint does not need any parameter.
 **200** | OK. |  -  |
 **500** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dhcpUpdateStaticLease**
 > void dhcpUpdateStaticLease(dhcpStaticLease)
@@ -456,13 +519,21 @@ Updates IP address, hostname of the static lease.  IP version must be the same a
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, DhcpApi, DhcpApiDhcpUpdateStaticLeaseRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .DhcpApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new DhcpApi(configuration);
 
-let body:.DhcpApiDhcpUpdateStaticLeaseRequest = {
+let body: DhcpApiDhcpUpdateStaticLeaseRequest = {
   // DhcpStaticLease
   dhcpStaticLease: {
     mac: "00:11:09:b3:b3:b8",
@@ -504,6 +575,6 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **501** | Not implemented (for example, on Windows). |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

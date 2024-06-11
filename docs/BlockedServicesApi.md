@@ -1,6 +1,5 @@
-# .BlockedServicesApi
+# BlockedServicesApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,11 +19,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
 let body:any = {};
 
@@ -57,7 +64,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockedServicesAvailableServices**
 > Array<string> blockedServicesAvailableServices()
@@ -68,11 +75,19 @@ Deprecated: Use `GET /blocked_services/all` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
 let body:any = {};
 
@@ -105,7 +120,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockedServicesList**
 > Array<string> blockedServicesList()
@@ -116,11 +131,19 @@ Deprecated: Use `GET /blocked_services/get` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
 let body:any = {};
 
@@ -153,7 +176,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockedServicesSchedule**
 > BlockedServicesSchedule blockedServicesSchedule()
@@ -163,11 +186,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
 let body:any = {};
 
@@ -200,7 +231,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockedServicesScheduleUpdate**
 > void blockedServicesScheduleUpdate(blockedServicesSchedule)
@@ -210,13 +241,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi, BlockedServicesApiBlockedServicesScheduleUpdateRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
-let body:.BlockedServicesApiBlockedServicesScheduleUpdateRequest = {
+let body: BlockedServicesApiBlockedServicesScheduleUpdateRequest = {
   // BlockedServicesSchedule
   blockedServicesSchedule: {
     schedule: {
@@ -288,7 +327,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **blockedServicesSet**
 > void blockedServicesSet()
@@ -299,13 +338,21 @@ Deprecated: Use `PUT /blocked_services/update` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, BlockedServicesApi, BlockedServicesApiBlockedServicesScheduleUpdateRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .BlockedServicesApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new BlockedServicesApi(configuration);
 
-let body:.BlockedServicesApiBlockedServicesSetRequest = {
+let body: BlockedServicesApiBlockedServicesSetRequest = {
   // Array<string> (optional)
   requestBody: [
     "requestBody_example",
@@ -344,6 +391,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

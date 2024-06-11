@@ -1,6 +1,5 @@
-# .ParentalApi
+# ParentalApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,11 +16,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ParentalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ParentalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ParentalApi(configuration);
 
 let body:any = {};
 
@@ -54,7 +61,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **parentalEnable**
 > void parentalEnable()
@@ -64,11 +71,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ParentalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ParentalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ParentalApi(configuration);
 
 let body:any = {};
 
@@ -101,7 +116,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **parentalStatus**
 > ParentalStatus200Response parentalStatus()
@@ -111,11 +126,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ParentalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ParentalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ParentalApi(configuration);
 
 let body:any = {};
 
@@ -148,6 +171,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

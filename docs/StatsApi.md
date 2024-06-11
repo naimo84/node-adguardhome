@@ -1,6 +1,5 @@
-# .StatsApi
+# StatsApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,11 +19,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
 let body:any = {};
 
@@ -57,7 +64,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putStatsConfig**
 > void putStatsConfig(body)
@@ -67,13 +74,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi, StatsApiPutStatsConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
-let body:.StatsApiPutStatsConfigRequest = {
+let body:StatsApiPutStatsConfigRequest = {
   // GetStatsConfigResponse
   body: {
     enabled: true,
@@ -116,7 +131,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **stats**
 > Stats stats()
@@ -126,11 +141,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
 let body:any = {};
 
@@ -163,7 +186,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | Returns statistics data |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **statsConfig**
 > void statsConfig()
@@ -174,13 +197,21 @@ Deprecated: Use `PUT /stats/config/update` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi, StatsApiStatsConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
-let body:.StatsApiStatsConfigRequest = {
+let body:StatsApiStatsConfigRequest = {
   // StatsConfig (optional)
   statsConfig: {
     interval: 0,
@@ -219,7 +250,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **statsInfo**
 > StatsConfig statsInfo()
@@ -230,11 +261,19 @@ Deprecated: Use `GET /stats/config` instead.  NOTE: If `interval` was configured
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
 let body:any = {};
 
@@ -267,7 +306,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **statsReset**
 > void statsReset()
@@ -277,11 +316,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, StatsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .StatsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new StatsApi(configuration);
 
 let body:any = {};
 
@@ -314,6 +361,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

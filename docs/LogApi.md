@@ -1,6 +1,5 @@
-# .LogApi
+# LogApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -20,11 +19,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
 let body:any = {};
 
@@ -57,7 +64,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **putQueryLogConfig**
 > void putQueryLogConfig(body)
@@ -67,13 +74,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi, LogApiPutQueryLogConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
-let body:.LogApiPutQueryLogConfigRequest = {
+let body: LogApiPutQueryLogConfigRequest = {
   // GetQueryLogConfigResponse
   body: {
     enabled: true,
@@ -117,7 +132,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **queryLog**
 > QueryLog queryLog()
@@ -127,13 +142,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi, LogApiQueryLogRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
-let body:.LogApiQueryLogRequest = {
+let body: LogApiQueryLogRequest = {
   // string | Filter by older than (optional)
   olderThan: "older_than_example",
   // number | Specify the ranking number of the first item on the page.  Even though it is possible to use \"offset\" and \"older_than\", we recommend choosing one of them and sticking to it.  (optional)
@@ -182,7 +205,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **queryLogConfig**
 > void queryLogConfig()
@@ -193,13 +216,21 @@ Deprecated: Use `PUT /querylog/config/update` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi, LogApiQueryLogConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
-let body:.LogApiQueryLogConfigRequest = {
+let body: LogApiQueryLogConfigRequest = {
   // QueryLogConfig (optional)
   queryLogConfig: {
     enabled: true,
@@ -240,7 +271,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **queryLogInfo**
 > QueryLogConfig queryLogInfo()
@@ -251,11 +282,19 @@ Deprecated: Use `GET /querylog/config` instead.  NOTE: If `interval` was configu
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
 let body:any = {};
 
@@ -288,7 +327,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **querylogClear**
 > void querylogClear()
@@ -298,11 +337,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, LogApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .LogApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new LogApi(configuration);
 
 let body:any = {};
 
@@ -335,6 +382,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

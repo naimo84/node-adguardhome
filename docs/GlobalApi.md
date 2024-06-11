@@ -1,6 +1,5 @@
-# .GlobalApi
+# GlobalApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,11 +27,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -66,7 +73,7 @@ This endpoint does not need any parameter.
 **200** | OK. |  -  |
 **500** | Failed |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **cacheClear**
 > void cacheClear()
@@ -76,11 +83,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -113,7 +128,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dnsConfig**
 > void dnsConfig()
@@ -123,13 +138,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiDnsConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiDnsConfigRequest = {
+let body: GlobalApiDnsConfigRequest = {
   // DNSConfig (optional)
   dNSConfig: {
     bootstrapDns: ["8.8.8.8:53","1.1.1.1:53"],
@@ -196,7 +219,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dnsInfo**
 > DnsInfo200Response dnsInfo()
@@ -206,11 +229,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -243,7 +274,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getProfile**
 > ProfileInfo getProfile()
@@ -253,11 +284,19 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -290,7 +329,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getVersionJson**
 > VersionInfo getVersionJson(getVersionRequest)
@@ -300,13 +339,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiGetVersionJsonRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiGetVersionJsonRequest = {
+let body: GlobalApiGetVersionJsonRequest = {
   // GetVersionRequest
   getVersionRequest: {
     recheckNow: true,
@@ -347,7 +394,7 @@ Name | Type | Description  | Notes
 **500** | Cannot write answer |  -  |
 **502** | Cannot retrieve the version.json file contents |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **login**
 > void login(login)
@@ -357,13 +404,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiLoginRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiLoginRequest = {
+let body: GlobalApiLoginRequest = {
   // Login
   login: {
     name: "name_example",
@@ -405,7 +460,7 @@ Name | Type | Description  | Notes
 **400** | Invalid username or password.  |  -  |
 **429** | Out of login attempts.  |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **logout**
 > logout()
@@ -415,11 +470,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -452,7 +515,7 @@ void (empty response body)
 |-------------|-------------|------------------|
 **302** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mobileConfigDoH**
 > void mobileConfigDoH()
@@ -462,13 +525,21 @@ void (empty response body)
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiMobileConfigDoHRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiMobileConfigDoHRequest = {
+let body: GlobalApiMobileConfigDoHRequest = {
   // string | Host for which the config is generated.  If no host is provided, `tls.server_name` from the configuration file is used.  If `tls.server_name` is not set, the API returns an error with a 500 status. 
   host: "example.org",
   // string | ClientID.  (optional)
@@ -509,7 +580,7 @@ Name | Type | Description  | Notes
 **200** | DNS over HTTPS plist file. |  -  |
 **500** | Server configuration error. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mobileConfigDoT**
 > void mobileConfigDoT()
@@ -519,13 +590,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiMobileConfigDoTRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiMobileConfigDoTRequest = {
+let body: GlobalApiMobileConfigDoTRequest = {
   // string | Host for which the config is generated.  If no host is provided, `tls.server_name` from the configuration file is used.  If `tls.server_name` is not set, the API returns an error with a 500 status. 
   host: "example.org",
   // string | ClientID.  (optional)
@@ -566,7 +645,7 @@ Name | Type | Description  | Notes
 **200** | DNS over TLS plist file |  -  |
 **500** | Server configuration error. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **setProtection**
 > void setProtection()
@@ -576,13 +655,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiSetProtectionRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiSetProtectionRequest = {
+let body: GlobalApiSetProtectionRequest = {
   // SetProtectionRequest (optional)
   setProtectionRequest: {
     enabled: true,
@@ -622,7 +709,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **status**
 > ServerStatus status()
@@ -632,11 +719,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
 let body:any = {};
 
@@ -669,7 +764,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **testUpstreamDNS**
 > { [key: string]: string; } testUpstreamDNS()
@@ -679,13 +774,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiTestUpstreamDNSRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiTestUpstreamDNSRequest = {
+let body: GlobalApiTestUpstreamDNSRequest = {
   // UpstreamsConfig | Upstream configuration to be tested (optional)
   upstreamsConfig: {
     bootstrapDns: ["8.8.8.8:53","1.1.1.1:53"],
@@ -727,7 +830,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | Status of testing each requested server, with \&quot;OK\&quot; meaning that server works, any other text means an error.  |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateProfile**
 > void updateProfile()
@@ -737,13 +840,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, GlobalApi, GlobalApiUpdateProfileRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .GlobalApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new GlobalApi(configuration);
 
-let body:.GlobalApiUpdateProfileRequest = {
+let body: GlobalApiUpdateProfileRequest = {
   // ProfileInfo (optional)
   profileInfo: {
     name: "name_example",
@@ -784,6 +895,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

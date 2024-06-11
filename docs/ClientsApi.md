@@ -1,6 +1,5 @@
-# .ClientsApi
+# ClientsApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -21,11 +20,19 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
 let body:any = {};
 
@@ -58,7 +65,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **accessSet**
 > void accessSet(body)
@@ -68,13 +75,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi, ClientsApiAccessSetRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
-let body:.ClientsApiAccessSetRequest = {
+let body: ClientsApiAccessSetRequest = {
   // AccessList
   body: {
     allowedClients: [
@@ -123,7 +138,7 @@ Name | Type | Description  | Notes
 **400** | Failed to parse JSON or cannot save the list.  |  -  |
 **500** | Internal error. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clientsAdd**
 > void clientsAdd(client)
@@ -133,13 +148,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi, ClientsApiClientsAddRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
-let body:.ClientsApiClientsAddRequest = {
+let body: ClientsApiClientsAddRequest = {
   // Client
   client: {
     name: "localhost",
@@ -240,7 +263,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clientsDelete**
 > void clientsDelete(clientDelete)
@@ -250,13 +273,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi , ClientsApiClientsDeleteRequest} from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
-let body:.ClientsApiClientsDeleteRequest = {
+let body: ClientsApiClientsDeleteRequest = {
   // ClientDelete
   clientDelete: {
     name: "name_example",
@@ -295,7 +326,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clientsFind**
 > Array<{ [key: string]: ClientFindSubEntry; }> clientsFind()
@@ -305,13 +336,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi,ClientsApiClientsFindRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
-let body:.ClientsApiClientsFindRequest = {
+let body: ClientsApiClientsFindRequest = {
   // string | Filter by IP address or ClientIDs.  Parameters with names `ip1`, `ip2`, and so on are also accepted and interpreted as \"ip0 OR ip1 OR ip2\". TODO(a.garipov): Replace with a better query API.  (optional)
   ip0: "ip0_example",
 };
@@ -348,7 +387,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clientsStatus**
 > Clients clientsStatus()
@@ -358,11 +397,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
 let body:any = {};
 
@@ -395,7 +442,7 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **clientsUpdate**
 > void clientsUpdate(clientUpdate)
@@ -405,13 +452,21 @@ This endpoint does not need any parameter.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, ClientsApi, ClientsApiClientsUpdateRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .ClientsApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new ClientsApi(configuration);
 
-let body:.ClientsApiClientsUpdateRequest = {
+let body: ClientsApiClientsUpdateRequest = {
   // ClientUpdate
   clientUpdate: {
     name: "name_example",
@@ -515,6 +570,6 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

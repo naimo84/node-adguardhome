@@ -1,6 +1,5 @@
-# .FilteringApi
+# FilteringApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,13 +21,21 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringAddURLRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringAddURLRequest = {
+let body: FilteringApiFilteringAddURLRequest = {
   // AddUrlRequest
   addUrlRequest: {
     name: "name_example",
@@ -69,7 +76,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringCheckHost**
 > FilterCheckHostResponse filteringCheckHost()
@@ -79,13 +86,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringCheckHostRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringCheckHostRequest = {
+let body: FilteringApiFilteringCheckHostRequest = {
   // string | Filter by host name (optional)
   name: "name_example",
 };
@@ -122,7 +137,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringConfig**
 > void filteringConfig(filterConfig)
@@ -132,13 +147,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringConfigRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringConfigRequest = {
+let body: FilteringApiFilteringConfigRequest = {
   // FilterConfig
   filterConfig: {
     enabled: true,
@@ -178,7 +201,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringRefresh**
 > FilterRefreshResponse filteringRefresh()
@@ -188,13 +211,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringRefreshRequest} from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringRefreshRequest = {
+let body: FilteringApiFilteringRefreshRequest = {
   // FilterRefreshRequest (optional)
   filterRefreshRequest: {
     whitelist: true,
@@ -233,7 +264,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringRemoveURL**
 > void filteringRemoveURL(removeUrlRequest)
@@ -243,13 +274,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringRemoveURLRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringRemoveURLRequest = {
+let body: FilteringApiFilteringRemoveURLRequest = {
   // RemoveUrlRequest
   removeUrlRequest: {
     url: "https://filters.adtidy.org/windows/filters/15.txt",
@@ -289,7 +328,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringSetRules**
 > void filteringSetRules()
@@ -299,13 +338,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringSetRulesRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringSetRulesRequest = {
+let body: FilteringApiFilteringSetRulesRequest = {
   // SetRulesRequest | Custom filtering rules. (optional)
   setRulesRequest: {
     rules: [
@@ -346,7 +393,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringSetURL**
 > void filteringSetURL()
@@ -356,13 +403,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi, FilteringApiFilteringSetURLRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
-let body:.FilteringApiFilteringSetURLRequest = {
+let body: FilteringApiFilteringSetURLRequest = {
   // FilterSetUrl (optional)
   filterSetUrl: {
     data: {
@@ -408,7 +463,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filteringStatus**
 > FilterStatus filteringStatus()
@@ -418,11 +473,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, FilteringApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .FilteringApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new FilteringApi(configuration);
 
 let body:any = {};
 
@@ -455,6 +518,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

@@ -1,6 +1,5 @@
-# .MobileconfigApi
+# MobileconfigApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,13 +15,21 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, MobileconfigApi,MobileconfigApiMobileConfigDoHRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .MobileconfigApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new MobileconfigApi(configuration);
 
-let body:.MobileconfigApiMobileConfigDoHRequest = {
+let body:MobileconfigApiMobileConfigDoHRequest = {
   // string | Host for which the config is generated.  If no host is provided, `tls.server_name` from the configuration file is used.  If `tls.server_name` is not set, the API returns an error with a 500 status. 
   host: "example.org",
   // string | ClientID.  (optional)
@@ -63,7 +70,7 @@ Name | Type | Description  | Notes
 **200** | DNS over HTTPS plist file. |  -  |
 **500** | Server configuration error. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **mobileConfigDoT**
 > void mobileConfigDoT()
@@ -73,13 +80,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, MobileconfigApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .MobileconfigApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new MobileconfigApi(configuration);
 
-let body:.MobileconfigApiMobileConfigDoTRequest = {
+let body:MobileconfigApiMobileConfigDoTRequest = {
   // string | Host for which the config is generated.  If no host is provided, `tls.server_name` from the configuration file is used.  If `tls.server_name` is not set, the API returns an error with a 500 status. 
   host: "example.org",
   // string | ClientID.  (optional)
@@ -120,6 +135,6 @@ Name | Type | Description  | Notes
 **200** | DNS over TLS plist file |  -  |
 **500** | Server configuration error. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

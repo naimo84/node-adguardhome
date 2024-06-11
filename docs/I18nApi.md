@@ -1,6 +1,5 @@
-# .I18nApi
+# I18nApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,13 +16,21 @@ Deprecated: Use `PUT /control/profile` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, I18nApi, I18nApiChangeLanguageRequest } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .I18nApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new I18nApi(configuration);
 
-let body:.I18nApiChangeLanguageRequest = {
+let body:I18nApiChangeLanguageRequest = {
   // LanguageSettings | New language.  It must be known to the server and must be an ISO 639-1 two-letter code.  (optional)
   languageSettings: {
     language: "language_example",
@@ -62,7 +69,7 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **currentLanguage**
 > LanguageSettings currentLanguage()
@@ -73,11 +80,19 @@ Deprecated: Use `GET /control/profile` instead.
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, I18nApi } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .I18nApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new I18nApi(configuration);
 
 let body:any = {};
 
@@ -110,6 +125,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 

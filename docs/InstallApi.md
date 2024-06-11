@@ -1,6 +1,5 @@
-# .InstallApi
+# InstallApi
 
-All URIs are relative to *https://raw.githubusercontent.com/control*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,13 +16,21 @@ Method | HTTP request | Description
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, InstallApi, InstallApiInstallCheckConfigRequest  } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .InstallApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new InstallApi(configuration);
 
-let body:.InstallApiInstallCheckConfigRequest = {
+let body:InstallApiInstallCheckConfigRequest = {
   // CheckConfigRequest | Configuration to be checked
   checkConfigRequest: {
     dns: {
@@ -73,7 +80,7 @@ Name | Type | Description  | Notes
 **200** | OK. |  -  |
 **400** | Failed to parse JSON or cannot listen on the specified address.  |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **installConfigure**
 > void installConfigure(initialConfiguration)
@@ -83,13 +90,21 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, InstallApi, InstallApiInstallCheckConfigRequest  } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .InstallApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new InstallApi(configuration);
 
-let body:.InstallApiInstallConfigureRequest = {
+let body:InstallApiInstallConfigureRequest = {
   // InitialConfiguration | Initial configuration JSON
   initialConfiguration: {
     dns: {
@@ -140,7 +155,7 @@ Name | Type | Description  | Notes
 **422** | The specified password does not meet the strength requirements.  |  -  |
 **500** | Cannot start the DNS server |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **installGetAddresses**
 > AddressesInfo installGetAddresses()
@@ -150,11 +165,19 @@ Name | Type | Description  | Notes
 
 
 ```typescript
-import {  } from '';
+import { createConfiguration, ServerConfiguration, InstallApi  } from 'adguardhome';
 import * as fs from 'fs';
 
-const configuration = .createConfiguration();
-const apiInstance = new .InstallApi(configuration);
+const configuration = createConfiguration({
+    baseServer: new ServerConfiguration("http://adguarghome-ip/control/"),
+    authMethods: {
+        basicAuth: {
+            username: "user",
+            password: "pass"
+        }
+    }
+});
+const apiInstance = new InstallApi(configuration);
 
 let body:any = {};
 
@@ -187,6 +210,6 @@ This endpoint does not need any parameter.
 |-------------|-------------|------------------|
 **200** | OK. |  -  |
 
-[[Back to top]](#) [[Back to API list]](README.md#documentation-for-api-endpoints) [[Back to Model list]](README.md#documentation-for-models) [[Back to README]](README.md)
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
